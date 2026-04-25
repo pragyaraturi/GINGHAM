@@ -1,9 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gingham | Home Decor for Your Dream Space</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
     <style>
       :root {
         --cream: #fffaf2;
@@ -16,38 +19,48 @@
         --card: rgba(255, 255, 255, 0.82);
         --border: rgba(255, 255, 255, 0.65);
         --shadow: 0 18px 40px rgba(160, 145, 177, 0.16);
+        --cream: #fff6ed;
+        --warm-cream: #ffe9d4;
+        --beige: #f5d4bf;
+        --pink: #efb5be;
+        --orange: #ef9b63;
+        --peach: #ffc79c;
+        --text: #40261f;
+        --muted: #7b5d54;
+        --card: rgba(255, 248, 241, 0.82);
+        --border: rgba(255, 248, 241, 0.7);
+        --shadow: 0 22px 50px rgba(133, 86, 64, 0.16);
+        --shadow-strong: 0 26px 55px rgba(111, 67, 51, 0.22);
+        --radius-xl: 38px;
+        --radius-lg: 30px;
       }
 
       * {
-        box-sizing: border-box;
-      }
 
       body {
         margin: 0;
         font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+        font-family: "Space Grotesk", "Segoe UI", sans-serif;
         color: var(--text);
         background:
           radial-gradient(circle at top left, rgba(255, 232, 154, 0.7), transparent 30%),
           radial-gradient(circle at top right, rgba(220, 238, 255, 0.9), transparent 32%),
           linear-gradient(180deg, #fffdf9 0%, #fff6fb 45%, #f8fbff 100%);
+          radial-gradient(circle at top left, rgba(255, 199, 156, 0.7), transparent 28%),
+          radial-gradient(circle at top right, rgba(239, 181, 190, 0.5), transparent 25%),
+          linear-gradient(180deg, #fff9f4 0%, #fff3eb 48%, #fffaf6 100%);
       }
 
       img {
-        display: block;
-        width: 100%;
-      }
-
-      .page-shell {
-        width: min(1120px, calc(100% - 2rem));
-        margin: 0 auto;
-      }
-
       .hero {
         position: relative;
         overflow: hidden;
         margin: 1.25rem auto 2.5rem;
         padding: 1.25rem;
         border-radius: 36px;
+        margin: 1.25rem auto 3.5rem;
+        padding: 1rem;
+        border-radius: 42px;
       }
 
       .hero-panel {
@@ -55,21 +68,22 @@
         display: grid;
         grid-template-columns: 1.1fr 0.9fr;
         gap: 2rem;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 2.5rem;
         align-items: center;
         padding: 4.5rem;
         background: linear-gradient(135deg, rgba(255, 216, 230, 0.75), rgba(220, 238, 255, 0.88));
+        min-height: 720px;
+        padding: 4.5rem 4rem;
+        background:
+          radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.7), transparent 20%),
+          linear-gradient(135deg, rgba(255, 235, 222, 0.96), rgba(255, 211, 189, 0.92) 55%, rgba(241, 189, 196, 0.88));
         border: 1px solid var(--border);
         border-radius: 32px;
+        border-radius: var(--radius-xl);
         box-shadow: var(--shadow);
       }
 
-      .hero-panel::before,
-      .hero-panel::after {
-        content: "";
-        position: absolute;
-        border-radius: 999px;
-        opacity: 0.55;
-        pointer-events: none;
       }
 
       .hero-panel::before {
@@ -78,6 +92,11 @@
         width: 220px;
         height: 220px;
         background: rgba(255, 255, 255, 0.5);
+        top: -55px;
+        right: -10px;
+        width: 240px;
+        height: 240px;
+        background: rgba(255, 248, 241, 0.5);
       }
 
       .hero-panel::after {
@@ -86,6 +105,11 @@
         width: 180px;
         height: 180px;
         background: rgba(255, 232, 154, 0.35);
+        bottom: -65px;
+        left: -10px;
+        width: 200px;
+        height: 200px;
+        background: rgba(239, 155, 99, 0.22);
       }
 
       .eyebrow {
@@ -93,12 +117,17 @@
         align-items: center;
         gap: 0.45rem;
         padding: 0.6rem 1rem;
+        padding: 0.65rem 1rem;
         border-radius: 999px;
         background: rgba(255, 255, 255, 0.72);
         box-shadow: 0 10px 22px rgba(173, 156, 188, 0.12);
+        background: rgba(255, 248, 241, 0.75);
+        box-shadow: 0 14px 24px rgba(156, 102, 79, 0.11);
         color: var(--muted);
         font-size: 0.88rem;
         letter-spacing: 0.04em;
+        font-size: 0.8rem;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
       }
 
@@ -107,49 +136,67 @@
         font-size: clamp(3rem, 6vw, 5.8rem);
         line-height: 0.95;
         letter-spacing: -0.05em;
+        font-family: "Syne", "Arial Black", sans-serif;
+        font-size: clamp(3.8rem, 8vw, 7.4rem);
+        line-height: 0.9;
+        letter-spacing: -0.07em;
+        text-transform: uppercase;
+        max-width: 8ch;
       }
 
       .hero-copy p {
         max-width: 34rem;
         margin: 0 0 1.75rem;
+        max-width: 33rem;
+        margin: 0 0 2rem;
         color: var(--muted);
         font-size: 1.08rem;
         line-height: 1.75;
+        line-height: 1.8;
       }
 
       .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.9rem;
       }
 
       .button {
         padding: 0.95rem 1.4rem;
+        padding: 1rem 1.5rem;
         border-radius: 999px;
         text-decoration: none;
         color: var(--text);
         font-weight: 600;
         transition: transform 0.25s ease, box-shadow 0.25s ease;
+        font-weight: 700;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
       }
 
       .button-primary {
         background: #ffffff;
         box-shadow: 0 14px 28px rgba(171, 151, 185, 0.2);
+        background: var(--text);
+        color: #fff7f1;
+        box-shadow: 0 16px 30px rgba(85, 47, 34, 0.18);
       }
 
       .button-secondary {
         background: rgba(255, 255, 255, 0.55);
         border: 1px solid rgba(255, 255, 255, 0.75);
+        background: rgba(255, 248, 241, 0.62);
+        border: 1px solid rgba(255, 248, 241, 0.85);
       }
 
       .button:hover {
         transform: translateY(-2px);
         box-shadow: 0 16px 28px rgba(160, 145, 177, 0.18);
+        transform: translateY(-3px);
+        box-shadow: 0 18px 30px rgba(111, 67, 51, 0.18);
       }
 
       .hero-visual {
         display: grid;
         gap: 1rem;
+        position: relative;
+        min-height: 540px;
       }
 
       .visual-card {
@@ -159,47 +206,136 @@
         border-radius: 28px;
         box-shadow: 0 18px 34px rgba(173, 156, 188, 0.12);
         backdrop-filter: blur(8px);
+        position: absolute;
+        background: rgba(255, 248, 241, 0.92);
+        border: 1px solid rgba(255, 248, 241, 0.95);
+        border-radius: 26px;
+        box-shadow: var(--shadow-strong);
+        overflow: hidden;
+        animation: drift 6.5s ease-in-out infinite;
       }
 
       .visual-card img {
         aspect-ratio: 4 / 5;
+        aspect-ratio: 4 / 4.8;
         object-fit: cover;
+      }
+
+      .visual-main {
+        top: 3.5rem;
+        left: 4rem;
+        width: min(320px, 72%);
+        padding: 1rem;
+        transform: rotate(-5deg);
+        z-index: 2;
+      }
+
+      .visual-main img {
         border-radius: 22px;
       }
 
-      .visual-caption {
-        display: flex;
-        justify-content: space-between;
         gap: 1rem;
         margin-top: 0.9rem;
         color: var(--muted);
         font-size: 0.95rem;
+        font-size: 0.92rem;
+      }
+
+      .floating-item {
+        position: absolute;
+        width: 155px;
+        padding: 0.7rem;
+        background: rgba(255, 248, 241, 0.88);
+        border: 1px solid rgba(255, 248, 241, 0.95);
+        border-radius: 24px;
+        box-shadow: 0 18px 35px rgba(111, 67, 51, 0.16);
+        animation: drift 5.6s ease-in-out infinite;
+      }
+
+      .floating-item img {
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 18px;
+      }
+
+      .floating-label {
+        margin-top: 0.55rem;
+        font-size: 0.82rem;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      .item-radio {
+        top: 1.25rem;
+        right: 1.25rem;
+        transform: rotate(11deg);
+        animation-delay: -1.2s;
+      }
+
+      .item-chair {
+        right: 0.75rem;
+        bottom: 7rem;
+        transform: rotate(-7deg);
+        animation-delay: -2.5s;
+      }
+
+      .item-lamp {
+        left: 0;
+        bottom: 1.75rem;
+        transform: rotate(8deg);
+        animation-delay: -0.6s;
+      }
+
+      .hero-note {
+        position: absolute;
+        right: 7rem;
+        bottom: 2rem;
+        max-width: 180px;
+        padding: 1rem 1.1rem;
+        background: rgba(64, 38, 31, 0.92);
+        color: #fff6ed;
+        border-radius: 24px;
+        box-shadow: 0 20px 35px rgba(64, 38, 31, 0.18);
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .hero-note strong {
+        display: block;
+        margin-bottom: 0.3rem;
+        font-size: 0.9rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
       }
 
       .section-heading {
         margin-bottom: 1.4rem;
+        margin-bottom: 1.8rem;
       }
 
       .section-heading h2 {
         margin: 0;
         font-size: clamp(2rem, 4vw, 3rem);
         letter-spacing: -0.04em;
+        font-family: "Syne", "Arial Black", sans-serif;
+        font-size: clamp(2.4rem, 5vw, 4rem);
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
       }
 
       .section-heading p {
         margin: 0.6rem 0 0;
         color: var(--muted);
         line-height: 1.7;
+        max-width: 38rem;
       }
 
       .products {
-        padding-bottom: 4rem;
-      }
-
       .product-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 1.4rem;
+        gap: 1.5rem;
       }
 
       .product-card {
@@ -207,30 +343,41 @@
         background: var(--card);
         border: 1px solid rgba(255, 255, 255, 0.8);
         border-radius: 28px;
+        border: 1px solid rgba(255, 248, 241, 0.95);
+        border-radius: var(--radius-lg);
         box-shadow: var(--shadow);
         transition: transform 0.28s ease, box-shadow 0.28s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
 
       .product-card:hover {
         transform: translateY(-8px);
         box-shadow: 0 24px 45px rgba(160, 145, 177, 0.22);
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-strong);
       }
 
       .product-card img {
         aspect-ratio: 4 / 4.8;
         object-fit: cover;
+        transition: transform 0.35s ease;
+      }
+
+      .product-card:hover img {
+        transform: scale(1.04);
       }
 
       .product-copy {
         padding: 1.15rem 1.2rem 1.4rem;
+        padding: 1.2rem 1.25rem 1.5rem;
       }
 
       .product-tag {
-        display: inline-block;
         margin-bottom: 0.7rem;
         padding: 0.45rem 0.8rem;
         border-radius: 999px;
         background: #fff;
+        background: rgba(255, 255, 255, 0.82);
         color: var(--muted);
         font-size: 0.8rem;
       }
@@ -238,60 +385,104 @@
       .product-copy h3 {
         margin: 0;
         font-size: 1.1rem;
+        font-size: 1.22rem;
       }
 
       .product-copy p {
-        margin: 0.6rem 0 0;
-        color: var(--muted);
-        line-height: 1.65;
         font-size: 0.96rem;
+      }
+
+      .product-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .product-price {
+        font-weight: 700;
+        font-size: 1rem;
+      }
+
+      .product-link {
+        padding: 0.75rem 1rem;
+        border-radius: 999px;
+        background: rgba(64, 38, 31, 0.08);
+        color: var(--text);
+        text-decoration: none;
+        font-size: 0.92rem;
+        font-weight: 700;
+        transition: background 0.25s ease, transform 0.25s ease;
+      }
+
+      .product-link:hover {
+        background: rgba(64, 38, 31, 0.14);
+        transform: translateY(-1px);
       }
 
       footer {
         padding: 0 0 2.5rem;
       }
-
-      .footer-panel {
-        display: flex;
-        justify-content: space-between;
-        gap: 1rem;
         align-items: center;
         padding: 1.25rem 1.4rem;
         border-radius: 22px;
         background: rgba(255, 255, 255, 0.74);
         border: 1px solid rgba(255, 255, 255, 0.82);
         box-shadow: 0 12px 24px rgba(160, 145, 177, 0.1);
+        background: rgba(255, 248, 241, 0.82);
+        border: 1px solid rgba(255, 248, 241, 0.92);
+        box-shadow: 0 12px 24px rgba(133, 86, 64, 0.1);
         color: var(--muted);
       }
 
-      .footer-brand {
-        font-weight: 700;
         color: var(--text);
+      }
+
+      @keyframes drift {
+        0%,
+        100% {
+          transform: translateY(0) rotate(var(--rotation, 0deg));
+        }
+        50% {
+          transform: translateY(-12px) rotate(var(--rotation, 0deg));
+        }
       }
 
       @media (max-width: 900px) {
         .hero-panel {
           grid-template-columns: 1fr;
           padding: 3rem 1.5rem;
+          min-height: auto;
+          padding: 3rem 1.5rem 2rem;
+        }
+
+        .hero-visual {
+          min-height: 560px;
+        }
+
+        .visual-main {
+          left: 50%;
+          transform: translateX(-50%) rotate(-5deg);
+        }
+
+        .hero-note {
+          right: 2rem;
         }
 
         .product-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
-      }
-
-      @media (max-width: 640px) {
-        .page-shell {
-          width: min(100% - 1rem, 1120px);
-        }
-
-        .hero {
-          margin-top: 0.5rem;
-          padding: 0.5rem;
         }
 
         h1 {
           font-size: clamp(2.6rem, 15vw, 4rem);
+          font-size: clamp(3.2rem, 16vw, 4.6rem);
+        }
+
+        .hero-panel {
+          padding: 2.4rem 1.2rem 1.6rem;
+          gap: 1.5rem;
         }
 
         .hero-copy p,
@@ -299,138 +490,183 @@
           font-size: 1rem;
         }
 
+        .hero-actions {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .hero-visual {
+          min-height: 500px;
+        }
+
+        .visual-main {
+          top: 5.5rem;
+          width: min(250px, 78%);
+        }
+
+        .floating-item {
+          width: 112px;
+          padding: 0.55rem;
+        }
+
+        .item-radio {
+          top: 0.5rem;
+          right: 0.2rem;
+        }
+
+        .item-chair {
+          right: 0;
+          bottom: 8.5rem;
+        }
+
+        .item-lamp {
+          left: 0.2rem;
+          bottom: 2.25rem;
+        }
+
+        .hero-note {
+          right: 1rem;
+          bottom: 0.75rem;
+          max-width: 150px;
+          padding: 0.9rem;
+        }
+
         .product-grid {
           grid-template-columns: 1fr;
+        }
+
+        .product-meta {
+          align-items: flex-start;
+          flex-direction: column;
         }
 
         .footer-panel {
           flex-direction: column;
           text-align: center;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <main class="page-shell">
       <section class="hero">
         <div class="hero-panel">
           <div class="hero-copy">
             <span class="eyebrow">Soft maximalism for everyday spaces</span>
+            <span class="eyebrow">Playful spaces. Retro soul. Soft living.</span>
             <h1>Gingham</h1>
             <p>
               A Gen Z home decor brand that transforms Pinterest-inspired maximalist aesthetics into affordable,
               real-life products.
+              A Gen Z home decor brand turning Pinterest-coded maximalism into warm, affordable pieces that actually
+              make your room feel alive.
             </p>
             <div class="hero-actions">
               <a class="button button-primary" href="#products">Shop the mood</a>
               <a class="button button-secondary" href="#footer">Cute corners only</a>
+              <a class="button button-secondary" href="#footer">See the edit</a>
             </div>
           </div>
 
           <div class="hero-visual">
             <div class="visual-card">
+            <div class="visual-card visual-main" style="--rotation: -5deg">
               <img
                 src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80"
                 alt="Pastel bedroom decor inspiration"
+                src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1000&q=80"
+                alt="Editorial home decor setup with layered pastel styling"
               />
               <div class="visual-caption">
                 <span>Dreamy layers</span>
                 <span>Butter yellow + blush</span>
+                <span>Editorial room drop</span>
+                <span>Warm beige + blush</span>
               </div>
+            </div>
+
+            <div class="floating-item item-radio" style="--rotation: 11deg">
+              <img
+                src="https://images.unsplash.com/photo-1518444065439-e933c06ce9cd?auto=format&fit=crop&w=700&q=80"
+                alt="Retro radio decor item"
+              />
+              <div class="floating-label">Retro radio</div>
+            </div>
+
+            <div class="floating-item item-chair" style="--rotation: -7deg">
+              <img
+                src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=700&q=80"
+                alt="Funky accent chair"
+              />
+              <div class="floating-label">Funky chair</div>
+            </div>
+
+            <div class="floating-item item-lamp" style="--rotation: 8deg">
+              <img
+                src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=700&q=80"
+                alt="Decorative pastel lamp"
+              />
+              <div class="floating-label">Glow lamp</div>
+            </div>
+
+            <div class="hero-note">
+              <strong>Curated for your corner</strong>
+              Soft retro shapes, dreamy tones, and statement pieces that still feel lived in.
             </div>
           </div>
         </div>
       </section>
-
-      <section class="products" id="products">
-        <div class="section-heading">
-          <h2>Fresh Finds</h2>
-          <p>
-            Curated pieces designed to make your room feel playful, personal, and camera-roll worthy.
-          </p>
-        </div>
-
-        <div class="product-grid">
-          <article class="product-card">
-            <img
-              src="https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=900&q=80"
-              alt="Gingham pillow set"
-            />
-            <div class="product-copy">
               <span class="product-tag">Best seller</span>
               <h3>Cloud Check Pillow Set</h3>
               <p>Soft gingham cushions in candy pink and cream for an instant bed refresh.</p>
+              <div class="product-meta">
+                <span class="product-price">$34</span>
+                <a class="product-link" href="#">Shop now</a>
+              </div>
             </div>
           </article>
 
-          <article class="product-card">
-            <img
-              src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80"
-              alt="Curvy pastel lamp"
-            />
-            <div class="product-copy">
               <span class="product-tag">New drop</span>
               <h3>Bubble Glow Lamp</h3>
               <p>A tiny statement lamp with a creamy glow that makes every corner feel softer.</p>
+              <div class="product-meta">
+                <span class="product-price">$42</span>
+                <a class="product-link" href="#">Shop now</a>
+              </div>
             </div>
           </article>
 
-          <article class="product-card">
-            <img
-              src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80"
-              alt="Pastel bedding and throw"
-            />
-            <div class="product-copy">
               <span class="product-tag">Pinterest fave</span>
               <h3>Sunday Layer Throw</h3>
               <p>Lightweight blue-and-butter knit made for bed styling, movie nights, and mirror pics.</p>
+              <div class="product-meta">
+                <span class="product-price">$38</span>
+                <a class="product-link" href="#">Shop now</a>
+              </div>
             </div>
           </article>
 
-          <article class="product-card">
-            <img
-              src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?auto=format&fit=crop&w=900&q=80"
-              alt="Decorative wall art"
-            />
-            <div class="product-copy">
               <span class="product-tag">Room reset</span>
               <h3>Sweetheart Wall Prints</h3>
               <p>A playful print trio with pastel shapes that brightens blank walls in seconds.</p>
+              <div class="product-meta">
+                <span class="product-price">$28</span>
+                <a class="product-link" href="#">Shop now</a>
+              </div>
             </div>
           </article>
 
-          <article class="product-card">
-            <img
-              src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=900&q=80"
-              alt="Decorative storage basket"
-            />
-            <div class="product-copy">
               <span class="product-tag">Tiny-space hero</span>
               <h3>Bloom Storage Basket</h3>
               <p>Pretty woven storage that keeps your essentials tucked away without looking basic.</p>
+              <div class="product-meta">
+                <span class="product-price">$24</span>
+                <a class="product-link" href="#">Shop now</a>
+              </div>
             </div>
           </article>
 
-          <article class="product-card">
-            <img
-              src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80"
-              alt="Pastel bedside styling"
-            />
-            <div class="product-copy">
               <span class="product-tag">Styled set</span>
               <h3>Daydream Bedside Edit</h3>
               <p>Mix-and-match decor accents that give your nightstand a polished but cozy vibe.</p>
+              <div class="product-meta">
+                <span class="product-price">$46</span>
+                <a class="product-link" href="#">Shop now</a>
+              </div>
             </div>
           </article>
         </div>
-      </section>
-
-      <footer id="footer">
-        <div class="footer-panel">
-          <span class="footer-brand">Gingham</span>
-          <span>Home decor for soft, colorful, personality-filled spaces.</span>
-        </div>
-      </footer>
-    </main>
-  </body>
-</html>
